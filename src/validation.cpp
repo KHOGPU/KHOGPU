@@ -93,7 +93,7 @@ static void CheckBlockIndex(const Consensus::Params& consensusParams);
 /** Constant stuff for coinbase transactions we create: */
 CScript COINBASE_FLAGS;
 
-const std::string strMessageMagic = "Bitcoin Gold Signed Message:\n";
+const std::string strMessageMagic = "Khorium Signed Message:\n";
 
 // Internal stuff
 namespace {
@@ -2971,7 +2971,7 @@ static bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationSta
             return state.DoS(100, error("%s: forked chain older than last checkpoint (height %d)", __func__, nHeight), REJECT_CHECKPOINT, "bad-fork-prior-to-checkpoint");
     }
 
-    // Check block height for blocks after BTG fork.
+    // Check block height for blocks after KHO fork.
     if (nHeight >= consensusParams.BTGHeight && block.nHeight != (uint32_t)nHeight)
         return state.Invalid(false, REJECT_INVALID, "bad-height", "incorrect block height");
 

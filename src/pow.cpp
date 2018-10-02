@@ -3,6 +3,7 @@
 // Copyright (c) 2016-2017 The Zcash developers
 // Copyright (c) 2018 The Bitcoin Private developers
 // Copyright (c) 2017-2018 The Bitcoin Gold developers
+// Copyright (c) 2017-2018 The Khorium developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -136,10 +137,10 @@ unsigned int DigishieldGetNextWorkRequired(const CBlockIndex* pindexLast, const 
         bnTot += bnTmp;
         pindexFirst = pindexFirst->pprev;
     }
-    
+
     if (pindexFirst == NULL)
         return nProofOfWorkLimit;
-    
+
     arith_uint256 bnAvg {bnTot / params.nDigishieldAveragingWindow};
     return DigishieldCalculateNextWorkRequired(bnAvg, pindexLast, pindexFirst, params);
 }
@@ -148,12 +149,12 @@ unsigned int DigishieldCalculateNextWorkRequired(arith_uint256 bnAvg, const CBlo
 {
     if (params.fPowNoRetargeting)
         return pindexLast->nBits;
-    
+
     int64_t nLastBlockTime = pindexLast->GetMedianTimePast();
     int64_t nFirstBlockTime = pindexFirst->GetMedianTimePast();
     // Limit adjustment
     int64_t nActualTimespan = nLastBlockTime - nFirstBlockTime;
-    
+
     if (nActualTimespan < params.DigishieldMinActualTimespan())
         nActualTimespan = params.DigishieldMinActualTimespan();
     if (nActualTimespan > params.DigishieldMaxActualTimespan())
@@ -164,7 +165,7 @@ unsigned int DigishieldCalculateNextWorkRequired(arith_uint256 bnAvg, const CBlo
     arith_uint256 bnNew {bnAvg};
     bnNew /= params.DigishieldAveragingWindowTimespan();
     bnNew *= nActualTimespan;
-    
+
     if (bnNew > bnPowLimit)
         bnNew = bnPowLimit;
 
@@ -175,7 +176,7 @@ unsigned int BitcoinGetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
 {
     assert(pindexLast != nullptr);
     unsigned int nProofOfWorkLimit = UintToArith256(params.PowLimit(false)).GetCompact();
-    
+
     // Only change once per difficulty adjustment interval
     if ((pindexLast->nHeight+1) % params.DifficultyAdjustmentInterval() != 0)
     {
@@ -222,24 +223,24 @@ unsigned int BitcoinCalculateNextWorkRequired(const CBlockIndex* pindexLast, int
 {
     if (params.fPowNoRetargeting)
         return pindexLast->nBits;
-    
+
     // Limit adjustment step
     int64_t nActualTimespan = pindexLast->GetBlockTime() - nFirstBlockTime;
     if (nActualTimespan < params.nPowTargetTimespanLegacy/4)
         nActualTimespan = params.nPowTargetTimespanLegacy/4;
     if (nActualTimespan > params.nPowTargetTimespanLegacy*4)
         nActualTimespan = params.nPowTargetTimespanLegacy*4;
-    
+
     // Retarget
     const arith_uint256 bnPowLimit = UintToArith256(params.PowLimit(false));
     arith_uint256 bnNew;
     bnNew.SetCompact(pindexLast->nBits);
     bnNew *= nActualTimespan;
     bnNew /= params.nPowTargetTimespanLegacy;
-    
+
     if (bnNew > bnPowLimit)
         bnNew = bnPowLimit;
-    
+
     return bnNew.GetCompact();
 }
 
