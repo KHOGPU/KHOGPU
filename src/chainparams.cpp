@@ -276,7 +276,7 @@ public:
         pchMessageStart[1] = 0x48;
         pchMessageStart[2] = 0x6e;
         pchMessageStart[3] = 0x45;
-        nDefaultPort = 18338;
+        nDefaultPort = 18558;
         nPruneAfterHeight = 1000;
         const size_t N = 200, K = 9;
         const size_t N2 = 144, K2 = 5;
