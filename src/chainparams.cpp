@@ -146,10 +146,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1510704000; // November 15th, 2017.
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0000000000000000000000000000000000000000000000000000000100010001");
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000100622001");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x0000000000000000003b9ce759c2a087d52abc4266f8f4ebd6d768b89defa50a"); //477890
+        consensus.defaultAssumeValid = uint256S("0x0004c10d976e85887b8dc24ea3ce90e7544946cdc701530445f6a658db023836"); //777
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -180,9 +180,7 @@ public:
         vSeeds.clear();
         // nodes with support for servicebits filtering should be at the top
 
-        /*vSeeds.emplace_back("eu-dnsseed.khorium-official.org", true);
-        vSeeds.emplace_back("dnsseed.khorium.org", true);
-        vSeeds.emplace_back("dnsseed.khorium.org", true);*/
+        vSeeds.emplace_back("dnsseed.crypttex.co", true);
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,46);  // prefix: K
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,26);  // prefix: B
@@ -199,13 +197,14 @@ public:
         checkpointData = (CCheckpointData) {
             {
                 { 0, uint256S("0x0000000039a01bf0a24d7caee86bd0e3666bf8498984bc170734860c9854ee03")},
+                { 777, uint256S("0x0004c10d976e85887b8dc24ea3ce90e7544946cdc701530445f6a658db023836")},
             }
         };
 
         chainTxData = ChainTxData{
-            0,
-            0,
-            0
+            1538907012,
+            827,
+            0.001339937722174764
         };
 
         vPreminePubkeys = {};
