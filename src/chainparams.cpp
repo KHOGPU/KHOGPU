@@ -99,8 +99,8 @@ public:
     CMainParams() {
         strNetworkID = "main";
         consensus.nSubsidyHalvingInterval = 210000;
-        consensus.BIP34Height = -1;
-        consensus.BIP34Hash = uint256();
+        consensus.BIP34Height = 1;
+        consensus.BIP34Hash = uint256S("0x0003f12cf5e756bb8d60913ab99db607768801abfe7018e526de3c52139c1b89");
         consensus.BIP65Height = -1;
         consensus.BIP66Height = -1;
         consensus.BTGHeight = 1;
