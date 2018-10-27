@@ -198,13 +198,14 @@ public:
             {
                 { 0, uint256S("0x0000000039a01bf0a24d7caee86bd0e3666bf8498984bc170734860c9854ee03")},
                 { 777, uint256S("0x0004c10d976e85887b8dc24ea3ce90e7544946cdc701530445f6a658db023836")},
+                { 3111, uint256S("0x0006ca8d5ea3bf965ba0a9ceb31c624330cd8d6037ca3dcefeaf384e760b2169")},
             }
         };
 
         chainTxData = ChainTxData{
-            1538907012,
-            827,
-            0.001339937722174764
+            1540628920,
+            3236,
+            0.001368768244928586
         };
 
         vPreminePubkeys = {};
