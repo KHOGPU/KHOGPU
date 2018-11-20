@@ -101,8 +101,8 @@ public:
         consensus.nSubsidyHalvingInterval = 210000;
         consensus.BIP34Height = 1;
         consensus.BIP34Hash = uint256S("0x0003f12cf5e756bb8d60913ab99db607768801abfe7018e526de3c52139c1b89");
-        consensus.BIP65Height = -1;
-        consensus.BIP66Height = -1;
+        consensus.BIP65Height = 1;
+        consensus.BIP66Height = 1;
         consensus.BTGHeight = 1;
         consensus.BTGPremineWindow = 4200;
         consensus.BTGZawyLWMAHeight = 1;
@@ -146,10 +146,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1541030399; // October 31, 2018
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000101a84001");
+        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000000000001020e0001");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x0004c10d976e85887b8dc24ea3ce90e7544946cdc701530445f6a658db023836"); //777
+        consensus.defaultAssumeValid = uint256S("0x00047bffb3599a7fb834c1234c9e8ff4cb762c2cdbaf2fc469a8534cea6d38e3"); //3777
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -199,13 +199,14 @@ public:
                 { 0, uint256S("0x0000000039a01bf0a24d7caee86bd0e3666bf8498984bc170734860c9854ee03")},
                 { 777, uint256S("0x0004c10d976e85887b8dc24ea3ce90e7544946cdc701530445f6a658db023836")},
                 { 3111, uint256S("0x0006ca8d5ea3bf965ba0a9ceb31c624330cd8d6037ca3dcefeaf384e760b2169")},
+                { 4200, uint256S("0x0002ee0d7dd32f7569493fb774fe3614b69384e1c183989686e0eaa9e9cc1854")},
             }
         };
 
         chainTxData = ChainTxData{
-            1540628920,
-            3236,
-            0.001368768244928586
+            1542598454,
+            4398,
+            0.001103697335861426
         };
 
         vPreminePubkeys = {};
