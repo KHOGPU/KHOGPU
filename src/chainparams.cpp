@@ -109,10 +109,10 @@ public:
         consensus.BTGEquihashForkHeight = 1;
         consensus.BTGPremineEnforceWhitelist = false;
         consensus.powLimit = uint256S("0007ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.powLimitStart = uint256S("0000000fffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.powLimitStart = uint256S("0007ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.powLimitLegacy = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
 
-        consensus.nDigishieldAveragingWindow = 30;
+        consensus.nDigishieldAveragingWindow = 100;
         assert(maxUint/UintToArith256(consensus.powLimit) >= consensus.nDigishieldAveragingWindow);
         consensus.nDigishieldMaxAdjustDown = 32;
         consensus.nDigishieldMaxAdjustUp = 16;
