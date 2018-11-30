@@ -34,7 +34,7 @@ Build Khorium
 
 2.  Build KHOGPU:
 
-    Configure and build the headless bitcoin binaries as well as the GUI (if Qt is found).
+    Configure and build the headless khorium binaries as well as the GUI (if Qt is found).
 
     You can disable the GUI build by passing `--without-gui` to configure.
 
@@ -57,7 +57,7 @@ Khorium is now available at `./src/khoriumd`
 
 Before running, it's recommended you create an RPC configuration file.
 
-    echo -e "rpcuser=bitcoinrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "$HOME/Library/Application Support/Khorium/khorium.conf"
+    echo -e "rpcuser=khoriumrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "$HOME/Library/Application Support/Khorium/khorium.conf"
 
     chmod 600 "$HOME/Library/Application Support/Khorium/khorium.conf"
 
@@ -70,20 +70,20 @@ You can monitor the download process by looking at the debug.log file:
 Other commands:
 -------
 
-    ./src/khoriumd -daemon # Starts the bitcoin daemon.
+    ./src/khoriumd -daemon # Starts the khorium daemon.
     ./src/khorium-cli --help # Outputs a list of command-line options.
     ./src/khorium-cli help # Outputs a list of RPC commands when the daemon is running.
 
 Using Qt Creator as IDE
 ------------------------
-You can use Qt Creator as an IDE, for bitcoin development.
+You can use Qt Creator as an IDE, for khorium development.
 Download and install the community edition of [Qt Creator](https://www.qt.io/download/).
 Uncheck everything except Qt Creator during the installation process.
 
 1. Make sure you installed everything through Homebrew mentioned above
 2. Do a proper ./configure --enable-debug
 3. In Qt Creator do "New Project" -> Import Project -> Import Existing Project
-4. Enter "bitcoin-qt" as project name, enter src/qt as location
+4. Enter "khorium-qt" as project name, enter src/qt as location
 5. Leave the file selection as it is
 6. Confirm the "summary page"
 7. In the "Projects" tab select "Manage Kits..."

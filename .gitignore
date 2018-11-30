@@ -1,13 +1,13 @@
 *.tar.gz
 
 *.exe
-src/bitcoin
+src/khorium
 src/khoriumd
 src/khorium-cli
-src/bitcoin-tx
-src/test/test_bitcoin
-src/test/test_bitcoin_fuzzy
-src/qt/test/test_bitcoin-qt
+src/khorium-tx
+src/test/test_khorium
+src/test/test_khorium_fuzzy
+src/qt/test/test_khorium-qt
 
 # autoreconf
 Makefile.in
@@ -74,12 +74,12 @@ src/qt/test/moc*.cpp
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-bitcoin-qt
-Bitcoin-Qt.app
+khorium-qt
+Khorium-Qt.app
 
 # Unit-tests
 Makefile.test
-bitcoin-qt_test
+khorium-qt_test
 
 # Resources cpp
 qrc_*.cpp
@@ -95,7 +95,7 @@ build
 *.gcno
 *.gcda
 /*.info
-test_bitcoin.coverage/
+test_khorium.coverage/
 total.coverage/
 coverage_percent.txt
 

@@ -38,7 +38,7 @@
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>org.bitcoingpu.Khorium-Qt</string>
+  <string>org.khorium.Khorium-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>
@@ -46,10 +46,10 @@
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>CFBundleURLName</key>
-      <string>org.bitcoin.BitcoinPayment</string>
+      <string>org.khorium.KhoriumPayment</string>
       <key>CFBundleURLSchemes</key>
       <array>
-        <string>bitcoin</string>
+        <string>khorium</string>
       </array>
     </dict>
   </array>
@@ -58,9 +58,9 @@
   <array>
     <dict>
       <key>UTTypeIdentifier</key>
-      <string>org.bitcoin.paymentrequest</string>
+      <string>org.khorium.paymentrequest</string>
       <key>UTTypeDescription</key>
-      <string>Bitcoin payment request</string>
+      <string>Khorium payment request</string>
       <key>UTTypeConformsTo</key>
       <array>
         <string>public.data</string>
@@ -68,10 +68,10 @@
       <key>UTTypeTagSpecification</key>
       <dict>
         <key>public.mime-type</key>
-        <string>application/x-bitcoin-payment-request</string>
+        <string>application/x-khorium-payment-request</string>
         <key>public.filename-extension</key>
         <array>
-          <string>bitcoinpaymentrequest</string>
+          <string>khoriumpaymentrequest</string>
         </array>
       </dict>
     </dict>
@@ -84,7 +84,7 @@
       <string>Editor</string>
       <key>LSItemContentTypes</key>
       <array>
-        <string>org.bitcoin.paymentrequest</string>
+        <string>org.khorium.paymentrequest</string>
       </array>
       <key>LSHandlerRank</key>
       <string>Owner</string>

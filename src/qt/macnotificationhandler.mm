@@ -13,7 +13,7 @@
 - (NSString *)__bundleIdentifier
 {
     if (self == [NSBundle mainBundle]) {
-        return @"org.bitcoingpu.Khorium-Qt";
+        return @"org.khorium.Khorium-Qt";
     } else {
         return [self __bundleIdentifier];
     }

@@ -1483,7 +1483,7 @@ void ThreadMapPort()
             }
         }
 
-        std::string strDesc = "Bitcoin " + FormatFullVersion();
+        std::string strDesc = "Khorium " + FormatFullVersion();
 
         try {
             while (true) {
